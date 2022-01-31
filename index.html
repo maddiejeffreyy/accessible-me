@@ -14,54 +14,65 @@
 
 <body>
   <div class="container">
-    <div class="site-header">
-      <h1>Jam Box Studios</h1>
-      <div class="main-nav">
+    <header class="site-header"role="banner">
+      <h1 role="heading">Jam Box Studios</h1>
+      <div class="main-nav" role="navigation">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reservation</a></li>
-          <li><a href="#">Studio</a></li>
+          <li><a href="#home" class="home" aria-label="Go to the home page">Home</a></li>
+          <li><a href="#" aria-label="Go to the products page">Products</a></li>
+          <li><a href="#"aria-label="Go to the reservation page">Reservation</a></li>
+          <li><a href="#" aria-label="Go to the studio page">Studio</a></li>
+          <!-- I would add more skip links here but the nav headers don't coresspond 
+          to anywhere else on the page-->
         </ul>
       </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
-    </div>
-    <div class="main-content">
-      <h1>Welcome to Jam Box</h1>
+      <img src="https://placekitten.com/1200/900" class="banner" alt="Picture of a cute calico coloured kitten">
+    </header>
+
+    <main class="main-content" id="home" role="main">
+      <h2 role="heading">Welcome to Jam Box</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <div class="owner">
-        <h1>Meet the owner</h1>
+      <div itemscope itemtype="https://schema.org/Person" class="owner">
+        <h3 role="heading">Meet the owner</h3>
         <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+          <li itemprop="name">Name: <span itemprop="name">John Doe</span></li>
+          <li itemprop="job title">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
-        <h1>Address</h1>
-        <p>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
+        <h3 role="heading">Address</h3>
+        <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="brand">Jambox Studios</span>
+          <span itemprop="streetAddress">123 Guitar Road,</span>
+          <span itemprop="addressLocality">Musicville,</span> 
+          <span itemprop="addressRegion">Danceistan</span>
+          <span itemprop="postalCode">B3T 0L0</span>
         </p>
       </div>
       <div class="contact-section">
-        <h1>Contact Us</h1>
+        <h3 role="heading">Contact Us</h3>
         <form action="thanks.html">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
+          <label for ="yourname">Full Name</label>
+          <input type="text" id="yourname" placeholder="Full Name">
+
+          <label for="youremail">Email</label>
+          <input type="email" id="youremail" placeholder="Email">
+
+          <label for="yoursubject">Subject</label>
           <input type="text" placeholder="Subject">
-          <b>Your Message</b>
+          
+          <label for="yourmessage">Your Message</label>
           <textarea></textarea>
           <button type="submit">Send</button>
         </form>
       </div>
-    </div>
-    <div class="site-footer">
-      &copy; 2021 Jam Box Studios
-    </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      &copy;<span itemprop="copyrightYear">2021</span> <span itemprop="copyrightHolder">Jam Box Studios</span>
+    </footer>
+
   </div>
 </body>
 
